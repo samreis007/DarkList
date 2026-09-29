@@ -16,6 +16,16 @@ const checkEvento = (checkbox,span,objeto)=>{
         span.style.textDecoration = 'none'
     }
 }
+const editarTarefa = (span, objeto) =>{
+    let resposta = window.prompt('',objeto.texto)
+    if(resposta !==null && resposta.trim() !== ''){
+        objeto.texto = resposta
+        span.textContent = resposta
+    }
+    
+        
+    
+}
 const deletaTarefa = (item,id)=>{
     item.remove()
     tarefas=tarefas.filter(tarefa => tarefa.id !== id)
@@ -51,6 +61,10 @@ const adiciona = () =>{
 
        checkbox.addEventListener('change',()=>{
         checkEvento(checkbox,span,objeto)
+       })
+
+       buttonEdit.addEventListener('click',()=>{
+        editarTarefa(span,objeto)
        })
 
        buttonExcluir.addEventListener('click',()=>{
