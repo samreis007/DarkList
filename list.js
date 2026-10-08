@@ -14,6 +14,7 @@ const checkEvento = (checkbox,span,objeto)=>{
     else{
         objeto.concluida = false
         span.style.textDecoration = 'none'
+        span.style.color = 'rgba(255,255,255)'
     }
 }
 const editarTarefa = (span, objeto) =>{
